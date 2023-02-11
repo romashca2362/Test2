@@ -1,9 +1,3 @@
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
 public class Main {
 
 	public static void main(String[] args) {
@@ -13,7 +7,8 @@ public class Main {
 				Each language has its purpose, however humble.  Each language expresses the Yin and Yang of software.  Each language has its place within the Tao.
 				But do not program in COBOL if you can avoid it.
 				        -- Geoffrey James, "The Tao of Programming""";
-		StringFindNonRepeatingChar stringFindNonRepeatingChar = new StringFindNonRepeatingChar();
+
+		FindNonRepeatingChar findNonRepeatingChar = new FindNonRepeatingChar();
 
 		String[] splitString = originalString.split("\\W+");
 
@@ -21,12 +16,12 @@ public class Main {
 
 		//первый проход по фрагментам текста
 		for (String s : splitString) {
-			searchCharacter.append(stringFindNonRepeatingChar.findNonRepeatingChar(s));
+			searchCharacter.append(findNonRepeatingChar.searchNonRepeatingChar(s));
 		}
 
 		//выводим искомый символ
 		if (!searchCharacter.isEmpty()) {
-			System.out.println(stringFindNonRepeatingChar.findNonRepeatingChar(searchCharacter.toString()));
+			System.out.println(findNonRepeatingChar.searchNonRepeatingChar(searchCharacter.toString()));
 		} else {
 			System.out.println("В тексте нет одиночного символа");
 		}
