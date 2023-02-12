@@ -8,7 +8,7 @@ public class Main {
 				But do not program in COBOL if you can avoid it.
 				        -- Geoffrey James, "The Tao of Programming""";
 
-		FindNonRepeatingChar findNonRepeatingChar = new FindNonRepeatingChar();
+		Searching nonRepeatingCharacterSearch = new NonRepeatingCharacterSearch();
 
 		String[] splitString = originalString.split("\\W+");
 
@@ -16,12 +16,12 @@ public class Main {
 
 		//первый проход по фрагментам текста
 		for (String s : splitString) {
-			searchCharacter.append(findNonRepeatingChar.searchNonRepeatingChar(s));
+			searchCharacter.append(nonRepeatingCharacterSearch.searchNonRepeatingChar(s));
 		}
 
 		//выводим искомый символ
 		if (!searchCharacter.isEmpty()) {
-			System.out.println(findNonRepeatingChar.searchNonRepeatingChar(searchCharacter.toString()));
+			System.out.println(nonRepeatingCharacterSearch.searchNonRepeatingChar(searchCharacter.toString()));
 		} else {
 			System.out.println("В тексте нет одиночного символа");
 		}

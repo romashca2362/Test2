@@ -1,3 +1,3 @@
-public interface searching<T> {
+public interface Searching<T> {
 	public T searchNonRepeatingChar(T value);
 }
