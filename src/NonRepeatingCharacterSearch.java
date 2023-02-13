@@ -24,7 +24,7 @@ public class NonRepeatingCharacterSearch<T> implements Searching<T> {
 			firstUniqueCharacter.append(uniqueCharactersFilter.get(0).getKey());
 		}
 
-		return (T) firstUniqueCharacter;
+		return (T) firstUniqueCharacter.toString();
 	}
 
 	private void writeToMapCharactersAndNumberOfRepitions(T value) {

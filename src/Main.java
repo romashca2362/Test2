@@ -8,22 +8,9 @@ public class Main {
 				But do not program in COBOL if you can avoid it.
 				        -- Geoffrey James, "The Tao of Programming""";
 
-		Searching nonRepeatingCharacterSearch = new NonRepeatingCharacterSearch();
+		TextFragmentsIterator<String> textFragmentsIterator = new TextFragmentsIterator<>(originalString);
 
-		String[] splitString = originalString.split("\\W+");
+		textFragmentsIterator.printFirstUniqueCharacter();
 
-		StringBuilder searchCharacter = new StringBuilder();
-
-		//первый проход по фрагментам текста
-		for (String s : splitString) {
-			searchCharacter.append(nonRepeatingCharacterSearch.searchNonRepeatingChar(s));
-		}
-
-		//выводим искомый символ
-		if (!searchCharacter.isEmpty()) {
-			System.out.println(nonRepeatingCharacterSearch.searchNonRepeatingChar(searchCharacter.toString()));
-		} else {
-			System.out.println("В тексте нет одиночного символа");
-		}
 	}
 }
